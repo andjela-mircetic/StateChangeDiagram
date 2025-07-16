@@ -19,7 +19,10 @@
       <concept id="7479276855445114955" name="StateChangeLanguage.structure.Action" flags="ng" index="QkeFB">
         <property id="7479276855445114973" name="actionName" index="QkeFL" />
       </concept>
-      <concept id="7479276855445114948" name="StateChangeLanguage.structure.State" flags="ng" index="QkeFC" />
+      <concept id="7479276855445114948" name="StateChangeLanguage.structure.State" flags="ng" index="QkeFC">
+        <child id="7479276855445114959" name="doActivity" index="QkeFz" />
+        <child id="7479276855445114960" name="exitAction" index="QkeFW" />
+      </concept>
       <concept id="7479276855445114968" name="StateChangeLanguage.structure.Condition" flags="ng" index="QkeFO">
         <property id="7479276855445114969" name="name" index="QkeFP" />
       </concept>
@@ -34,21 +37,36 @@
   </registry>
   <node concept="QkeEi" id="6vbIELhBDgB">
     <node concept="QkeFY" id="6vbIELhFRLb" role="QkeFE">
-      <property role="QkeFZ" value="Default transition" />
-      <ref role="QkeFS" node="6vbIELhFRLa" resolve="State 6" />
-      <ref role="QkeFT" node="6vbIELhFG9E" resolve="State 5" />
+      <property role="QkeFZ" value="slanje signala" />
+      <ref role="QkeFS" node="6vbIELhFRLa" resolve="Pokrenuta" />
+      <ref role="QkeFT" node="6vbIELhFG9E" resolve="U procesu rada" />
       <node concept="QkeFO" id="6vbIELhFRLc" role="QkeFU">
-        <property role="QkeFP" value="frr" />
+        <property role="QkeFP" value="ima struje" />
       </node>
-      <node concept="QkeFB" id="6vbIELhFRLd" role="QkeFR">
-        <property role="QkeFL" value="vf" />
-      </node>
+      <node concept="QkeFB" id="6vbIELhFRLd" role="QkeFR" />
+    </node>
+    <node concept="QkeFY" id="6vbIELhGm0r" role="QkeFE">
+      <property role="QkeFZ" value="pritiskanje dugmeta" />
+      <ref role="QkeFS" node="6vbIELhFG9E" resolve="U procesu rada" />
+      <ref role="QkeFT" node="6vbIELhFWtb" resolve="Ugasena" />
     </node>
     <node concept="QkeFC" id="6vbIELhFRLa" role="QkeFI">
-      <property role="TrG5h" value="State 6" />
+      <property role="TrG5h" value="Pokrenuta" />
     </node>
     <node concept="QkeFC" id="6vbIELhFG9E" role="QkeFI">
-      <property role="TrG5h" value="State 5" />
+      <property role="TrG5h" value="U procesu rada" />
+      <node concept="QkeFB" id="6vbIELhGm0p" role="QkeFz">
+        <property role="QkeFL" value="pranje" />
+      </node>
+      <node concept="QkeFB" id="6vbIELhGm0q" role="QkeFW">
+        <property role="QkeFL" value="ugasi" />
+      </node>
+    </node>
+    <node concept="QkeFC" id="6vbIELhFWtb" role="QkeFI">
+      <property role="TrG5h" value="Ugasena" />
+      <node concept="QkeFB" id="6vbIELhFWtc" role="QkeFz">
+        <property role="QkeFL" value="vghvhgvhv" />
+      </node>
     </node>
   </node>
 </model>
