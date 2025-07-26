@@ -13,6 +13,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_Condition;
   private ConceptPresentation props_State;
   private ConceptPresentation props_StateDiagram;
+  private ConceptPresentation props_StateNode;
   private ConceptPresentation props_Transition;
 
   @Override
@@ -48,10 +49,17 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_StateDiagram = cpb.create();
         }
         return props_StateDiagram;
+      case LanguageConceptSwitch.StateNode:
+        if (props_StateNode == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0xf269776b13f84556L, 0xb9ea9dcaab37b019L, 0x1e98fee87f52fc4bL, 0x1e98fee87f52fc4dL, "state", "", "");
+          props_StateNode = cpb.create();
+        }
+        return props_StateNode;
       case LanguageConceptSwitch.Transition:
         if (props_Transition == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("Transition");
+          cpb.presentationByReference(0xf269776b13f84556L, 0xb9ea9dcaab37b019L, 0x67cbbaac519b5052L, 0x67cbbaac519b5055L, "to", "", "");
           props_Transition = cpb.create();
         }
         return props_Transition;

@@ -15,6 +15,8 @@
       <concept id="7479276855445114942" name="StateChangeLanguage.structure.StateDiagram" flags="ng" index="QkeEi">
         <child id="7479276855445114950" name="transitions" index="QkeFE" />
         <child id="7479276855445114946" name="states" index="QkeFI" />
+        <child id="2204792292119870546" name="nodes" index="1xMwaU" />
+        <child id="2204792292120000494" name="states" index="1xN0$6" />
       </concept>
       <concept id="7479276855445114955" name="StateChangeLanguage.structure.Action" flags="ng" index="QkeFB">
         <property id="7479276855445114973" name="actionName" index="QkeFL" />
@@ -33,9 +35,46 @@
         <child id="7479276855445114971" name="effect" index="QkeFR" />
         <child id="7479276855445114966" name="condition" index="QkeFU" />
       </concept>
+      <concept id="2204792292119870539" name="StateChangeLanguage.structure.StateNode" flags="ng" index="1xMwaz">
+        <reference id="2204792292119870541" name="state" index="1xMwa_" />
+        <child id="2204792292120285321" name="trasitionsForRow" index="1xKqTx" />
+        <child id="2204792292119870543" name="transitionsForState" index="1xMwaB" />
+      </concept>
     </language>
   </registry>
   <node concept="QkeEi" id="6vbIELhBDgB">
+    <node concept="1xMwaz" id="1UoZIxZmwqe" role="1xMwaU">
+      <ref role="1xMwa_" node="1UoZIxZlpcI" resolve="Start" />
+      <node concept="QkeFY" id="1UoZIxZmwqj" role="1xKqTx">
+        <property role="QkeFZ" value="tr3" />
+        <ref role="QkeFT" node="6vbIELhFWtb" resolve="Ugasena" />
+      </node>
+      <node concept="QkeFY" id="1UoZIxZmwqf" role="1xMwaB">
+        <property role="QkeFZ" value="tr1" />
+        <ref role="QkeFT" node="1UoZIxZlpcM" resolve="Upaljeno" />
+        <node concept="QkeFO" id="1UoZIxZmwqk" role="QkeFU">
+          <property role="QkeFP" value="ima struje" />
+        </node>
+        <node concept="QkeFB" id="1UoZIxZmwql" role="QkeFR">
+          <property role="QkeFL" value="pali" />
+        </node>
+      </node>
+      <node concept="QkeFY" id="1UoZIxZmwqg" role="1xMwaB">
+        <property role="QkeFZ" value="tr2" />
+        <ref role="QkeFT" node="1UoZIxZlpcK" resolve="End" />
+      </node>
+    </node>
+    <node concept="QkeFC" id="1UoZIxZlpcI" role="1xN0$6">
+      <property role="TrG5h" value="Start" />
+      <node concept="QkeFB" id="1UoZIxZlpcJ" role="QkeFW" />
+    </node>
+    <node concept="QkeFC" id="1UoZIxZlpcK" role="1xN0$6">
+      <property role="TrG5h" value="End" />
+      <node concept="QkeFB" id="1UoZIxZlpcL" role="QkeFW" />
+    </node>
+    <node concept="QkeFC" id="1UoZIxZlpcM" role="1xN0$6">
+      <property role="TrG5h" value="Upaljeno" />
+    </node>
     <node concept="QkeFY" id="6vbIELhFRLb" role="QkeFE">
       <property role="QkeFZ" value="slanje signala" />
       <ref role="QkeFS" node="6vbIELhFRLa" resolve="Pokrenuta" />
@@ -49,6 +88,18 @@
       <property role="QkeFZ" value="pritiskanje dugmeta" />
       <ref role="QkeFS" node="6vbIELhFG9E" resolve="U procesu rada" />
       <ref role="QkeFT" node="6vbIELhFWtb" resolve="Ugasena" />
+    </node>
+    <node concept="QkeFY" id="1UoZIxZkJL5" role="QkeFE" />
+    <node concept="QkeFY" id="1UoZIxZkJL6" role="QkeFE">
+      <property role="QkeFZ" value="hdhfdhfdhfd" />
+      <ref role="QkeFS" node="6vbIELhFWtb" resolve="Ugasena" />
+      <ref role="QkeFT" node="6vbIELhFWtb" resolve="Ugasena" />
+      <node concept="QkeFO" id="1UoZIxZkJL7" role="QkeFU">
+        <property role="QkeFP" value="bfdbfdbfdb" />
+      </node>
+      <node concept="QkeFB" id="1UoZIxZkJL8" role="QkeFR">
+        <property role="QkeFL" value="nhjbjhvbhjn" />
+      </node>
     </node>
     <node concept="QkeFC" id="6vbIELhFRLa" role="QkeFI">
       <property role="TrG5h" value="Pokrenuta" />

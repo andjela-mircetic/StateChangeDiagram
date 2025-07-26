@@ -13,23 +13,23 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import java.util.Collections;
 import jetbrains.mps.intentions.AbstractIntentionExecutable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import StateChangeLanguage.behavior.StateDiagram__BehaviorDescriptor;
 import jetbrains.mps.openapi.intentions.IntentionDescriptor;
-import org.jetbrains.mps.openapi.language.SProperty;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 
-public final class intention_new_state_Intention extends AbstractIntentionDescriptor implements IntentionFactory {
+public final class createNewTransitionForState_Intention extends AbstractIntentionDescriptor implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
 
-  public intention_new_state_Intention() {
-    super(Kind.NORMAL, false, new SNodePointer("r:0d848e4c-4d44-424c-8863-a532d1712477(StateChangeLanguage.intentions)", "7479276855445342232"));
+  public createNewTransitionForState_Intention() {
+    super(Kind.NORMAL, false, new SNodePointer("r:0d848e4c-4d44-424c-8863-a532d1712477(StateChangeLanguage.intentions)", "2204792292120164215"));
   }
 
   @Override
   public String getPresentation() {
-    return "intention_new_state";
+    return "createNewTransitionForState";
   }
 
   @Override
@@ -49,15 +49,16 @@ public final class intention_new_state_Intention extends AbstractIntentionDescri
 
     @Override
     public String getDescription(final SNode node, final EditorContext editorContext) {
-      return "Create new state";
+      return "Crate new event for this state";
     }
 
     @Override
     public void execute(final SNode node, final EditorContext editorContext) {
-      SNode diagram = (SNode) SNodeOperations.getParent(node);
-      SNode state = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0xf269776b13f84556L, 0xb9ea9dcaab37b019L, 0x67cbbaac519b5044L, "StateChangeLanguage.structure.State"));
+      SNode statenode = (SNode) SNodeOperations.getParent(node);
+      int index = ListSequence.fromList(SLinkOperations.getChildren(statenode, LINKS.transitionsForState$$Wwi)).indexOf(node);
 
-      SPropertyOperations.assign(state, PROPS.name$MnvL, StateDiagram__BehaviorDescriptor.getdefaultstatename_id6vbIELhCe9V.invoke(diagram));
+      SNode newNode = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0xf269776b13f84556L, 0xb9ea9dcaab37b019L, 0x67cbbaac519b5052L, "StateChangeLanguage.structure.Transition"));
+      ListSequence.fromList(SLinkOperations.getChildren(statenode, LINKS.transitionsForState$$Wwi)).addElement(newNode);
     }
 
     @Override
@@ -69,12 +70,12 @@ public final class intention_new_state_Intention extends AbstractIntentionDescri
 
     @Override
     public IntentionDescriptor getDescriptor() {
-      return intention_new_state_Intention.this;
+      return createNewTransitionForState_Intention.this;
     }
 
   }
 
-  private static final class PROPS {
-    /*package*/ static final SProperty name$MnvL = MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name");
+  private static final class LINKS {
+    /*package*/ static final SContainmentLink transitionsForState$$Wwi = MetaAdapterFactory.getContainmentLink(0xf269776b13f84556L, 0xb9ea9dcaab37b019L, 0x1e98fee87f52fc4bL, 0x1e98fee87f52fc4fL, "transitionsForState");
   }
 }

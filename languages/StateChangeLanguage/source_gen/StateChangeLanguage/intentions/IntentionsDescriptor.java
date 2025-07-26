@@ -38,6 +38,13 @@ public final class IntentionsDescriptor extends AbstractIntentionAspectDescripto
           intentions[0] = new intention_new_state_Intention();
         }
         break;
+      case 1:
+        if (true) {
+          // concept
+          intentions = new IntentionFactory[1];
+          intentions[0] = new createNewTransitionForState_Intention();
+        }
+        break;
       default:
     }
     myCached.put(concept, intentions);
@@ -47,9 +54,10 @@ public final class IntentionsDescriptor extends AbstractIntentionAspectDescripto
   @NotNull
   @Override
   public Collection<IntentionFactory> getAllIntentions() {
-    IntentionFactory[] rv = new IntentionFactory[1];
+    IntentionFactory[] rv = new IntentionFactory[2];
     rv[0] = new intention_new_state_Intention();
+    rv[1] = new createNewTransitionForState_Intention();
     return Arrays.asList(rv);
   }
-  private static final ConceptSwitchIndex conceptIndex = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xf269776b13f84556L, 0xb9ea9dcaab37b019L, 0x67cbbaac519b5044L)).seal();
+  private static final ConceptSwitchIndex conceptIndex = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xf269776b13f84556L, 0xb9ea9dcaab37b019L, 0x67cbbaac519b5044L), MetaIdFactory.conceptId(0xf269776b13f84556L, 0xb9ea9dcaab37b019L, 0x67cbbaac519b5052L)).seal();
 }

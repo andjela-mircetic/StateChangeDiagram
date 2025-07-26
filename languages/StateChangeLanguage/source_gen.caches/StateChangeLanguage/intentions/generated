@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<product version="3" modelHash="5e41l2qq2r8rwjd6w1c1pv9p92jcbye">
-  <files names="IntentionsDescriptor.java:intention_new_state_Intention.java" />
+<product version="3" modelHash="7b03cxtwhocq7m2qa6ytj49gmtqjrqn">
+  <files names="IntentionsDescriptor.java:createNewTransitionForState_Intention.java:intention_new_state_Intention.java" />
 </product>
 

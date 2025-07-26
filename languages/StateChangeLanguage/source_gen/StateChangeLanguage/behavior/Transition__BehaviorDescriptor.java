@@ -13,11 +13,9 @@ import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
-import org.jetbrains.mps.openapi.language.SReferenceLink;
 
 public final class Transition__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xf269776b13f84556L, 0xb9ea9dcaab37b019L, 0x67cbbaac519b5052L, "StateChangeLanguage.structure.Transition");
@@ -30,7 +28,7 @@ public final class Transition__BehaviorDescriptor extends BaseBHDescriptor {
   }
 
   /*package*/ static boolean isSelfTransition_id6vbIELhAP1T(@NotNull SNode __thisNode__) {
-    return SLinkOperations.getTarget(__thisNode__, LINKS.from$1t0V) == SLinkOperations.getTarget(__thisNode__, LINKS.to$1tfW);
+    return true;
   }
 
   /*package*/ Transition__BehaviorDescriptor() {
@@ -77,10 +75,5 @@ public final class Transition__BehaviorDescriptor extends BaseBHDescriptor {
   @Override
   public SAbstractConcept getConcept() {
     return CONCEPT;
-  }
-
-  private static final class LINKS {
-    /*package*/ static final SReferenceLink to$1tfW = MetaAdapterFactory.getReferenceLink(0xf269776b13f84556L, 0xb9ea9dcaab37b019L, 0x67cbbaac519b5052L, 0x67cbbaac519b5055L, "to");
-    /*package*/ static final SReferenceLink from$1t0V = MetaAdapterFactory.getReferenceLink(0xf269776b13f84556L, 0xb9ea9dcaab37b019L, 0x67cbbaac519b5052L, 0x67cbbaac519b5054L, "from");
   }
 }

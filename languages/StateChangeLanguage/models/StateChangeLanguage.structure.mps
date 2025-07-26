@@ -45,19 +45,19 @@
     <property role="TrG5h" value="StateDiagram" />
     <property role="19KtqR" value="true" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
-    <node concept="1TJgyj" id="6vbIELhAP12" role="1TKVEi">
-      <property role="IQ2ns" value="7479276855445114946" />
+    <node concept="1TJgyj" id="1UoZIxZkJLi" role="1TKVEi">
+      <property role="IQ2ns" value="2204792292119870546" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="nodes" />
+      <property role="20lbJX" value="fLJekj5/_0__n" />
+      <ref role="20lvS9" node="1UoZIxZkJLb" resolve="StateNode" />
+    </node>
+    <node concept="1TJgyj" id="1UoZIxZlfvI" role="1TKVEi">
+      <property role="IQ2ns" value="2204792292120000494" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
       <property role="20kJfa" value="states" />
       <property role="20lbJX" value="fLJekj5/_0__n" />
       <ref role="20lvS9" node="6vbIELhAP14" resolve="State" />
-    </node>
-    <node concept="1TJgyj" id="6vbIELhAP16" role="1TKVEi">
-      <property role="IQ2ns" value="7479276855445114950" />
-      <property role="20lmBu" value="fLJjDmT/aggregation" />
-      <property role="20kJfa" value="transitions" />
-      <property role="20lbJX" value="fLJekj5/_0__n" />
-      <ref role="20lvS9" node="6vbIELhAP1i" resolve="Transition" />
     </node>
   </node>
   <node concept="1TIwiD" id="6vbIELhAP14">
@@ -105,12 +105,6 @@
       <property role="TrG5h" value="event" />
       <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
-    <node concept="1TJgyj" id="6vbIELhAP1k" role="1TKVEi">
-      <property role="IQ2ns" value="7479276855445114964" />
-      <property role="20kJfa" value="from" />
-      <property role="20lbJX" value="fLJekj4/_1" />
-      <ref role="20lvS9" node="6vbIELhAP14" resolve="State" />
-    </node>
     <node concept="1TJgyj" id="6vbIELhAP1l" role="1TKVEi">
       <property role="IQ2ns" value="7479276855445114965" />
       <property role="20kJfa" value="to" />
@@ -138,6 +132,31 @@
       <property role="IQ2nx" value="7479276855445114969" />
       <property role="TrG5h" value="name" />
       <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="1UoZIxZkJLb">
+    <property role="EcuMT" value="2204792292119870539" />
+    <property role="TrG5h" value="StateNode" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="1UoZIxZkJLd" role="1TKVEi">
+      <property role="IQ2ns" value="2204792292119870541" />
+      <property role="20kJfa" value="state" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" node="6vbIELhAP14" resolve="State" />
+    </node>
+    <node concept="1TJgyj" id="1UoZIxZkJLf" role="1TKVEi">
+      <property role="IQ2ns" value="2204792292119870543" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="transitionsForState" />
+      <property role="20lbJX" value="fLJekj5/_0__n" />
+      <ref role="20lvS9" node="6vbIELhAP1i" resolve="Transition" />
+    </node>
+    <node concept="1TJgyj" id="1UoZIxZml29" role="1TKVEi">
+      <property role="IQ2ns" value="2204792292120285321" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="trasitionsForRow" />
+      <property role="20lbJX" value="fLJekj5/_0__n" />
+      <ref role="20lvS9" node="6vbIELhAP1i" resolve="Transition" />
     </node>
   </node>
 </model>
