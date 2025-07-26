@@ -15,6 +15,7 @@ public final class LanguageConceptSwitch {
   public static final int StateDiagram = 3;
   public static final int StateNode = 4;
   public static final int Transition = 5;
+  public static final int TransitionNode = 6;
 
   public LanguageConceptSwitch() {
     LanguageConceptIndexBuilder builder = new LanguageConceptIndexBuilder(0xf269776b13f84556L, 0xb9ea9dcaab37b019L);
@@ -24,6 +25,7 @@ public final class LanguageConceptSwitch {
     builder.put(0x67cbbaac519b503eL, StateDiagram);
     builder.put(0x1e98fee87f52fc4bL, StateNode);
     builder.put(0x67cbbaac519b5052L, Transition);
+    builder.put(0x1e98fee87f5b9783L, TransitionNode);
     myIndex = builder.seal();
   }
 

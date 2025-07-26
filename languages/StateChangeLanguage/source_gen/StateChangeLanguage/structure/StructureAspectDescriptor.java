@@ -19,6 +19,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptStateDiagram = createDescriptorForStateDiagram();
   /*package*/ final ConceptDescriptor myConceptStateNode = createDescriptorForStateNode();
   /*package*/ final ConceptDescriptor myConceptTransition = createDescriptorForTransition();
+  /*package*/ final ConceptDescriptor myConceptTransitionNode = createDescriptorForTransitionNode();
   private final LanguageConceptSwitch myIndexSwitch;
 
   public StructureAspectDescriptor() {
@@ -33,7 +34,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptAction, myConceptCondition, myConceptState, myConceptStateDiagram, myConceptStateNode, myConceptTransition);
+    return Arrays.asList(myConceptAction, myConceptCondition, myConceptState, myConceptStateDiagram, myConceptStateNode, myConceptTransition, myConceptTransitionNode);
   }
 
   @Override
@@ -52,6 +53,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptStateNode;
       case LanguageConceptSwitch.Transition:
         return myConceptTransition;
+      case LanguageConceptSwitch.TransitionNode:
+        return myConceptTransitionNode;
       default:
         return null;
     }
@@ -104,8 +107,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.origin("r:a0d0698c-b5a1-4dbd-9033-41e6b5366d4b(StateChangeLanguage.structure)/2204792292119870539");
     b.version(3);
     b.associate("state", 0x1e98fee87f52fc4dL).target(0xf269776b13f84556L, 0xb9ea9dcaab37b019L, 0x67cbbaac519b5044L).optional(false).origin("2204792292119870541").done();
-    b.aggregate("transitionsForState", 0x1e98fee87f52fc4fL).target(0xf269776b13f84556L, 0xb9ea9dcaab37b019L, 0x67cbbaac519b5052L).optional(true).ordered(true).multiple(true).origin("2204792292119870543").done();
-    b.aggregate("trasitionsForRow", 0x1e98fee87f595089L).target(0xf269776b13f84556L, 0xb9ea9dcaab37b019L, 0x67cbbaac519b5052L).optional(true).ordered(true).multiple(true).origin("2204792292120285321").done();
+    b.aggregate("transitionsForState", 0x1e98fee87f52fc4fL).target(0xf269776b13f84556L, 0xb9ea9dcaab37b019L, 0x1e98fee87f5b9783L).optional(true).ordered(true).multiple(true).origin("2204792292119870543").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForTransition() {
@@ -117,6 +119,14 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.associate("to", 0x67cbbaac519b5055L).target(0xf269776b13f84556L, 0xb9ea9dcaab37b019L, 0x67cbbaac519b5044L).optional(false).origin("7479276855445114965").done();
     b.aggregate("condition", 0x67cbbaac519b5056L).target(0xf269776b13f84556L, 0xb9ea9dcaab37b019L, 0x67cbbaac519b5058L).optional(true).ordered(true).multiple(false).origin("7479276855445114966").done();
     b.aggregate("effect", 0x67cbbaac519b505bL).target(0xf269776b13f84556L, 0xb9ea9dcaab37b019L, 0x67cbbaac519b504bL).optional(true).ordered(true).multiple(false).origin("7479276855445114971").done();
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForTransitionNode() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("StateChangeLanguage", "TransitionNode", 0xf269776b13f84556L, 0xb9ea9dcaab37b019L, 0x1e98fee87f5b9783L);
+    b.class_(false, false, false);
+    b.origin("r:a0d0698c-b5a1-4dbd-9033-41e6b5366d4b(StateChangeLanguage.structure)/2204792292120434563");
+    b.version(3);
+    b.aggregate("transitionsForState", 0x1e98fee87f5b9784L).target(0xf269776b13f84556L, 0xb9ea9dcaab37b019L, 0x67cbbaac519b5052L).optional(true).ordered(true).multiple(true).origin("2204792292120434564").done();
     return b.create();
   }
 }

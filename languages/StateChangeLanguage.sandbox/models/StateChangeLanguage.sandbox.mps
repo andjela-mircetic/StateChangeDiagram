@@ -35,33 +35,49 @@
         <child id="7479276855445114971" name="effect" index="QkeFR" />
         <child id="7479276855445114966" name="condition" index="QkeFU" />
       </concept>
+      <concept id="2204792292120434563" name="StateChangeLanguage.structure.TransitionNode" flags="ng" index="1xKQ_F">
+        <child id="2204792292120434564" name="transitionsForState" index="1xKQ_G" />
+      </concept>
       <concept id="2204792292119870539" name="StateChangeLanguage.structure.StateNode" flags="ng" index="1xMwaz">
         <reference id="2204792292119870541" name="state" index="1xMwa_" />
-        <child id="2204792292120285321" name="trasitionsForRow" index="1xKqTx" />
         <child id="2204792292119870543" name="transitionsForState" index="1xMwaB" />
       </concept>
     </language>
   </registry>
   <node concept="QkeEi" id="6vbIELhBDgB">
-    <node concept="1xMwaz" id="1UoZIxZmwqe" role="1xMwaU">
+    <node concept="1xMwaz" id="1UoZIxZn6ag" role="1xMwaU">
       <ref role="1xMwa_" node="1UoZIxZlpcI" resolve="Start" />
-      <node concept="QkeFY" id="1UoZIxZmwqj" role="1xKqTx">
-        <property role="QkeFZ" value="tr3" />
-        <ref role="QkeFT" node="6vbIELhFWtb" resolve="Ugasena" />
-      </node>
-      <node concept="QkeFY" id="1UoZIxZmwqf" role="1xMwaB">
-        <property role="QkeFZ" value="tr1" />
-        <ref role="QkeFT" node="1UoZIxZlpcM" resolve="Upaljeno" />
-        <node concept="QkeFO" id="1UoZIxZmwqk" role="QkeFU">
-          <property role="QkeFP" value="ima struje" />
+      <node concept="1xKQ_F" id="1UoZIxZn6aH" role="1xMwaB">
+        <node concept="QkeFY" id="1UoZIxZn6aI" role="1xKQ_G">
+          <property role="QkeFZ" value="tr6" />
+          <ref role="QkeFT" node="1UoZIxZlpcM" resolve="Upaljeno" />
         </node>
-        <node concept="QkeFB" id="1UoZIxZmwql" role="QkeFR">
-          <property role="QkeFL" value="pali" />
+        <node concept="QkeFY" id="1UoZIxZn6aJ" role="1xKQ_G">
+          <property role="QkeFZ" value="tr2" />
+          <ref role="QkeFT" node="6vbIELhFG9E" resolve="U procesu rada" />
         </node>
       </node>
-      <node concept="QkeFY" id="1UoZIxZmwqg" role="1xMwaB">
-        <property role="QkeFZ" value="tr2" />
-        <ref role="QkeFT" node="1UoZIxZlpcK" resolve="End" />
+      <node concept="1xKQ_F" id="1UoZIxZn6aE" role="1xMwaB">
+        <node concept="QkeFY" id="1UoZIxZn6aF" role="1xKQ_G">
+          <property role="QkeFZ" value="tr7" />
+          <ref role="QkeFT" node="6vbIELhFRLa" resolve="Pokrenuta" />
+        </node>
+      </node>
+      <node concept="1xKQ_F" id="1UoZIxZn6ao" role="1xMwaB">
+        <node concept="QkeFY" id="1UoZIxZn6au" role="1xKQ_G">
+          <property role="QkeFZ" value="tr1" />
+          <ref role="QkeFT" node="1UoZIxZlpcM" resolve="Upaljeno" />
+        </node>
+        <node concept="QkeFY" id="1UoZIxZn6av" role="1xKQ_G">
+          <property role="QkeFZ" value="tr4" />
+          <ref role="QkeFT" node="6vbIELhFWtb" resolve="Ugasena" />
+        </node>
+      </node>
+      <node concept="1xKQ_F" id="1UoZIxZn6ap" role="1xMwaB">
+        <node concept="QkeFY" id="1UoZIxZn6ay" role="1xKQ_G">
+          <property role="QkeFZ" value="tr2" />
+          <ref role="QkeFT" node="6vbIELhFG9E" resolve="U procesu rada" />
+        </node>
       </node>
     </node>
     <node concept="QkeFC" id="1UoZIxZlpcI" role="1xN0$6">

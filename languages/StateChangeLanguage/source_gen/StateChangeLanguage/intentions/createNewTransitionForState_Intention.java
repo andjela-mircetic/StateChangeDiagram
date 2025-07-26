@@ -12,13 +12,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import java.util.Collections;
 import jetbrains.mps.intentions.AbstractIntentionExecutable;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.openapi.intentions.IntentionDescriptor;
-import org.jetbrains.mps.openapi.language.SContainmentLink;
 
 public final class createNewTransitionForState_Intention extends AbstractIntentionDescriptor implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
@@ -54,11 +48,7 @@ public final class createNewTransitionForState_Intention extends AbstractIntenti
 
     @Override
     public void execute(final SNode node, final EditorContext editorContext) {
-      SNode statenode = (SNode) SNodeOperations.getParent(node);
-      int index = ListSequence.fromList(SLinkOperations.getChildren(statenode, LINKS.transitionsForState$$Wwi)).indexOf(node);
 
-      SNode newNode = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0xf269776b13f84556L, 0xb9ea9dcaab37b019L, 0x67cbbaac519b5052L, "StateChangeLanguage.structure.Transition"));
-      ListSequence.fromList(SLinkOperations.getChildren(statenode, LINKS.transitionsForState$$Wwi)).addElement(newNode);
     }
 
     @Override
@@ -73,9 +63,5 @@ public final class createNewTransitionForState_Intention extends AbstractIntenti
       return createNewTransitionForState_Intention.this;
     }
 
-  }
-
-  private static final class LINKS {
-    /*package*/ static final SContainmentLink transitionsForState$$Wwi = MetaAdapterFactory.getContainmentLink(0xf269776b13f84556L, 0xb9ea9dcaab37b019L, 0x1e98fee87f52fc4bL, 0x1e98fee87f52fc4fL, "transitionsForState");
   }
 }

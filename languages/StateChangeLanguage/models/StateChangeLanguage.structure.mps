@@ -149,12 +149,17 @@
       <property role="20lmBu" value="fLJjDmT/aggregation" />
       <property role="20kJfa" value="transitionsForState" />
       <property role="20lbJX" value="fLJekj5/_0__n" />
-      <ref role="20lvS9" node="6vbIELhAP1i" resolve="Transition" />
+      <ref role="20lvS9" node="1UoZIxZmTu3" resolve="TransitionNode" />
     </node>
-    <node concept="1TJgyj" id="1UoZIxZml29" role="1TKVEi">
-      <property role="IQ2ns" value="2204792292120285321" />
+  </node>
+  <node concept="1TIwiD" id="1UoZIxZmTu3">
+    <property role="EcuMT" value="2204792292120434563" />
+    <property role="TrG5h" value="TransitionNode" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="1UoZIxZmTu4" role="1TKVEi">
+      <property role="IQ2ns" value="2204792292120434564" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
-      <property role="20kJfa" value="trasitionsForRow" />
+      <property role="20kJfa" value="transitionsForState" />
       <property role="20lbJX" value="fLJekj5/_0__n" />
       <ref role="20lvS9" node="6vbIELhAP1i" resolve="Transition" />
     </node>

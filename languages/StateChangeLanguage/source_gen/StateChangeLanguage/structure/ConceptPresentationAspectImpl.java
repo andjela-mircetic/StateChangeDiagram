@@ -15,6 +15,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_StateDiagram;
   private ConceptPresentation props_StateNode;
   private ConceptPresentation props_Transition;
+  private ConceptPresentation props_TransitionNode;
 
   @Override
   @Nullable
@@ -63,6 +64,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_Transition = cpb.create();
         }
         return props_Transition;
+      case LanguageConceptSwitch.TransitionNode:
+        if (props_TransitionNode == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("TransitionNode");
+          props_TransitionNode = cpb.create();
+        }
+        return props_TransitionNode;
     }
     return null;
   }
